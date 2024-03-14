@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Kenia&display=swap" rel="stylesheet">
+    <title>To do list</title>
+    <style>
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body{
+        background-color: #74EBD5;
+        background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+      }
+      h1{
+        font-family:'Kenia';
+        text-align:center;
+        color:black;
+        margin-top: 10%;
+        letter-spacing: 2px;
+        font-size: xxx-large;
+      }
+      .container{
+        width: 100%;
+        max-width: 540px;
+        background-color: white;
+        margin: 100px auto 20px ;
+        padding: 40px 30px 70px;
+        border-radius: 30px;
+        margin-top: 25px;
+      }
+      .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #edeef0;
+        border-radius: 12px;
+        padding-left: 20px;
+        margin-bottom: 25px;
+      }
+      input[type=text]{
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 10px;
+      }
+      .row button{
+        outline: none;
+        border: none;
+        padding: 10px 15px;
+        background:red;
+        font-weight: bolder;
+        border-radius: 50px;
+        cursor: pointer;
+        color: white;
+    }
+    .container ul li{
+      list-style: none;
+      font-size: 20px;
+      padding: 12px 10px 15px 30px;
+      user-select: none;
+      cursor: pointer;
+      position: relative;
+    }
+    .container ul li::before{
+      content: " ";
+      position: absolute;
+      height: 28px;
+      width: 28px;
+      border-radius: 50%;
+      background-image: url(./unchecked.png);
+      top: 10px;
+      left: 1px;
+      background-position: center;
+      background-size: cover;
+    }
+    .container ul li.checked{
+      color: #555;
+      text-decoration: line-through;
+    }
+    .container ul li.checked::before{
+      background-image: url(./checked.png);
+      
+    }
+    .container ul li span{
+      position: absolute;
+      right: 0px;
+      top: 5px;
+      width: 40px;
+      font-size: 24px;
+      font-weight: bolder;
+      color: black;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border-radius: 50%;
+    }
+    .container ul li span:hover{
+      background: #edeef0;
+    }
+    </style>
+</head>
+<body>
+  <div class="heading">
+    <h1>Todo List</h1>
+  </div>
+  <div class="container">
+    <div class="row">
+      <input type="text" name="list-bar" id="listBar" placeholder="Add your item to add">
+      <button onclick="addTask()">Add</button>
+    </div>
+    <ul id="list-container">
+      <!-- <li class="checked"></li>
+      <li></li>
+      <li></li>
+    </ul> -->
+
+  </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
